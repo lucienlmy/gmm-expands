@@ -122,7 +122,7 @@ async function install_xml(file: string, isInstall: boolean) {
     mods_xml.data = mods_xml_data
 }
 
-function lmi(mod: IModInfo, installPath: string, isInstall: boolean) {
+function lml(mod: IModInfo, installPath: string, isInstall: boolean) {
     asi(mod, isInstall)
     let manager = useManager()
     let modStorage = join(manager.modStorage, mod.id.toString())
@@ -175,13 +175,13 @@ export const supportedGames: ISupportedGames = {
         },
         {
             id: 2,
-            name: "lmi",
+            name: "lml",
             installPath: join("lml"),
             async install(mod) {
-                return lmi(mod, this.installPath ?? "", true)
+                return lml(mod, this.installPath ?? "", true)
             },
             async uninstall(mod) {
-                return lmi(mod, this.installPath ?? "", false)
+                return lml(mod, this.installPath ?? "", false)
             }
         },
         {
